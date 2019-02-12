@@ -7,4 +7,7 @@ class User < ApplicationRecord
                         :password
 
   validates :email, presence: true, uniqueness: true
+
+  def pets
+  end
 end
