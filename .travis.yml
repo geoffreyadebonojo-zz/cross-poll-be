@@ -10,7 +10,8 @@ services:
 
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-
+  - rake db:migrate
+  
 branches:
   only:
   - master
