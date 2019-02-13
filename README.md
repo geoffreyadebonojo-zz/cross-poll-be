@@ -1,24 +1,66 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>Adoptr Backend API </h1>
 
-Things you may want to cover:
+<h3>Hosted on https://adoptr-be.herokuapp.com/ </h3>
 
-* Ruby version
+This API is built to work with the Adoptr Frontend. The repo for the Adoptr Frontend can be found at https://github.com/colev1/cross-poll-fe. 
 
-* System dependencies
+<hr>
 
-* Configuration
+The endpoints that are available are as follows: 
 
-* Database creation
+<h2>post /api/v1/users</h2>
+This post request registers a user on the app. Below, you can see the correct way to pass params through the body, as well as the responses that a user will get when registration is successful or not. 
 
-* Database initialization
+![alt text](readme_images/post_users.png)
+![alt text](readme_images/post_users_correct_body.png)
+![alt text](readme_images/post_users_success_response.png)
+![alt text](readme_images/post_users_error_response.png)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+<ln>
+  
+  <h2>post /api/v1/sessions</h2>
+This post request logs an existing user into the app and store their info in sessions. Below, you can see the correct body format for the request, as well as the two possible responses for a successfull and an errored log in. 
+![alt text](readme_images/post_sessions.png)
+![alt text](readme_images/post_sessions_correct_body.png)
+![alt text](readme_images/post_sessions_correct_response.png)
+![alt text](readme_images/post_sessions_error_response.png)
+ 
 
-* Deployment instructions
 
-* ...
+<h1>Set Up</h1>
+
+Clone this repository and perform the following instructions in your terminal:
+
+1. git clone <github repo link>
+2. cd cross-poll-be
+ 
+<h2>Versions</h2>
+Adoptr API was developed using Rails 5.2 and Ruby 2.4
+
+<h2>Install</h2>
+1. bundle install
+2. rake db:{drop,migrate,seed} 
+3. rails s (opens server)
+4. visit http://localhost:3000 to access api endpoints locally
+
+<h2> Testing </h2>
+run 'rspec' in terminal to check testing coverage
+
+<h2>Built With</h2>
+Rails
+Google API
+RSpec
+ShouldaMatchers
+Capybara
+Launchy
+SimpleCov
+BCrypt
+PostreSQL
+Figaro
+
+<h2>Author</h2>
+Meghan Stang (mstang15)
+Geoff Adebonojo (geoffreyadebonojo)
