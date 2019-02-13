@@ -13,9 +13,20 @@ The endpoints that are available are as follows:
 <h2>post /api/v1/users</h2>
 This post request registers a user on the app. Below, you can see the correct way to pass params through the body, as well as the responses that a user will get when registration is successful or not. 
 
+Endpoint to Register a User: 
+
 ![alt text](readme_images/post_users.png)
+
+Correct Body to Register a User:
+
 ![alt text](readme_images/post_users_correct_body.png)
+
+Response for a Successfull User Registration: 
+
 ![alt text](readme_images/post_users_success_response.png)
+
+Response for an Errored User Registration: 
+
 ![alt text](readme_images/post_users_error_response.png)
 
 
@@ -23,9 +34,21 @@ This post request registers a user on the app. Below, you can see the correct wa
   
   <h2>post /api/v1/sessions</h2>
 This post request logs an existing user into the app and store their info in sessions. Below, you can see the correct body format for the request, as well as the two possible responses for a successfull and an errored log in. 
+
+Endpoint to Login a User:
+
 ![alt text](readme_images/post_sessions.png)
+
+Correct Body to Log in a User:
+
 ![alt text](readme_images/post_sessions_correct_body.png)
+
+Response for a Successfull User Log In: 
+
 ![alt text](readme_images/post_sessions_correct_response.png)
+
+Response for an Errored User Log In: 
+
 ![alt text](readme_images/post_sessions_error_response.png)
  
 
