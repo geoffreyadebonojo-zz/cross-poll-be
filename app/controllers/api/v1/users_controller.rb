@@ -3,7 +3,7 @@ class Api::V1::UsersController<ApplicationController
   def create
     user = User.create(user_params) if matching_passwords?
     if user!= nil && user.save
-      render :json => {:success => "Account successfully created for #{user.first_name} #{user.last_name}"}.to_json, :status => 201
+      render json: UserSerializer.new(user)
     else
       render :json => {:error => "Make sure passwords match, and a proper email address was provided"}.to_json, :status => 400
     end
@@ -12,7 +12,7 @@ class Api::V1::UsersController<ApplicationController
   private
 
   def user_params
-    params.permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.permit(:first_name, :last_name, :email, :password, :password_confirmation, :api_token)
   end
 
   def matching_passwords?
