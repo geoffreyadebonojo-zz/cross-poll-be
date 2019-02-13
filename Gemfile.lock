@@ -54,6 +54,8 @@ GEM
     diff-lcs (1.3)
     docile (1.3.1)
     erubi (1.8.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.10.0)
@@ -67,6 +69,9 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
+    kickbox (2.0.3)
+      faraday (~> 0.9)
+      json (>= 1.8)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -88,6 +93,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.6)
     multi_xml (0.6.0)
+    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -184,6 +190,7 @@ DEPENDENCIES
   fast_jsonapi
   figaro
   httparty
+  kickbox
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry
