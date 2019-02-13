@@ -23,6 +23,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'figaro'
 end
 
 group :development do
