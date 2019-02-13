@@ -12,7 +12,7 @@ RSpec.describe "User login" do
 
     post "/api/v1/users", params: data
 
-    expect(response.status).to eq(201)
+    expect(response.status).to eq(200)
     token = JSON.parse(response.body)["data"]["attributes"]["api_token"]
     expect(token).to be_a(String)
   end
@@ -28,7 +28,7 @@ RSpec.describe "User login" do
 
     post "/api/v1/users", params: data
 
-    expect(response.status).to eq(401)
+    expect(response.status).to eq(400)
   end
 
   it "throws error if no email is entered" do
@@ -56,7 +56,7 @@ RSpec.describe "User login" do
 
     post "/api/v1/users", params: data
 
-    expect(response.status).to eq(201)
+    expect(response.status).to eq(200)
     token = JSON.parse(response.body)["data"]["attributes"]["api_token"]
     expect(token).to be_a(String)
 
