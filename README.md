@@ -21,9 +21,9 @@ Correct Body to Register a User:
 
 ![alt text](readme_images/post_users_correct_body.png)
 
-Response for a Successfull User Registration: 
+Response for a Successfull User Registration (users should extract and save the api for later requests during the session): 
 
-![alt text](readme_images/post_users_success_response.png)
+![alt text](readme_images/correct_response_session_user.png)
 
 Response for an Errored User Registration: 
 
@@ -43,9 +43,9 @@ Correct Body to Log in a User:
 
 ![alt text](readme_images/post_sessions_correct_body.png)
 
-Response for a Successfull User Log In: 
+Response for a Successfull User Log In (users should extract and save the api for later requests during the session): 
 
-![alt text](readme_images/post_sessions_correct_response.png)
+![alt text](readme_images/correct_response_session_user.png)
 
 Response for an Errored User Log In: 
 
