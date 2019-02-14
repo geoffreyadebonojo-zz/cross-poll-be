@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :user_favorites
+  has_many :favorites, through: :user_favorites
   before_create :get_api_token
   has_secure_password
 
