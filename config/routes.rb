@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :sessions do
       end
       resources :locations do
+      end
+      resources :favorites do
       end 
     end
   end
