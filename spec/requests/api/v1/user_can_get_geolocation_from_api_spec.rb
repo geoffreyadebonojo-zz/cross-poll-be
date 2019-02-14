@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Geolocation Endpoint" do
-  xit "GET /location" do
+  it "GET /location" do
     get "/api/v1/locations"
     binding.pry
     expect(response.status).to eq(200)
