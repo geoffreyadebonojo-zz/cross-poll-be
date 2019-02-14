@@ -4,7 +4,7 @@ RSpec.describe "Geolocation Endpoint" do
   it "GET /location" do
     get "/api/v1/locations"
     expect(response.status).to eq(200)
-    expect(response.keys[0]).to eq("zip_code")
-    expect(response["keys"]).to_be a(String)
+    expect(response["zip_code"]).to be(nil)
+
   end
 end
