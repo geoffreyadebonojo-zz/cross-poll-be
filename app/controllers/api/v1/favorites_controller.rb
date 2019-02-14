@@ -10,4 +10,13 @@ class Api::V1::FavoritesController < ApplicationController
     end
   end
 
+  def index
+    user = User.find_by(api_token: params[:api_token])
+    if user!=nil
+      render json: FavoriteSerializer.new(user.favorites)
+    else
+      render :json => {:error => "Cannot find user with this api token"}.to_json, :status =>404
+    end
+  end
+
 end
