@@ -1,7 +1,10 @@
+require "kickbox"
 class Api::V1::UsersController<ApplicationController
 
   def create
-    if current_user
+    if verify_email.body["result"] == "undeliverable"
+      render :json => {:error => "This does not appear to be a valid email"}.to_json, :status => 401
+    elsif current_user
       render :json => {:error => "There is already an account created with this email address. Check your password, or register with a different email address to log in."}.to_json, :status => 401
     else
       user = User.create(user_params) if matching_passwords?
@@ -27,4 +30,9 @@ class Api::V1::UsersController<ApplicationController
     params[:password] == params[:password_confirmation]
   end
 
+  def verify_email
+    client   = Kickbox::Client.new(ENV['KICKBOX_API'])
+    kickbox  = client.kickbox()
+    response = kickbox.verify(user_params[:email])
+  end
 end

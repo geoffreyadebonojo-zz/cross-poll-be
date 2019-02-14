@@ -70,6 +70,9 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
+    kickbox (2.0.3)
+      faraday (~> 0.9)
+      json (>= 1.8)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -190,6 +193,7 @@ DEPENDENCIES
   figaro
   geocoder
   httparty
+  kickbox
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry
