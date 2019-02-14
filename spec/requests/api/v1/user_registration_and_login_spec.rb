@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User login" do
+  
   it "POST /users" do
     data = {
       "first_name": "The Greatest",
