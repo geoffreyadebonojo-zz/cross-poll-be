@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User login" do
-  xit "POST /users" do
+  it "POST /users" do
     data = {
       "first_name": "The Greatest",
       "last_name": "Guy",
@@ -17,7 +17,7 @@ RSpec.describe "User login" do
     expect(token).to be_a(String)
   end
 
-  xit "throws error if password not confirmed" do
+  it "throws error if password not confirmed" do
     data = {
       "first_name": "The Greatest",
       "last_name": "Guy",
@@ -31,7 +31,7 @@ RSpec.describe "User login" do
     expect(response.status).to eq(400)
   end
 
-  xit "throws error if no email is entered" do
+  it "throws error if no email is entered" do
     data = {
       "first_name": "The Greatest",
       "last_name": "Guy",
@@ -45,7 +45,7 @@ RSpec.describe "User login" do
     expect(response.status).to eq(401)
   end
 
-  xit "throws error if email is already taken" do
+  it "throws error if email is already taken" do
     data = {
       "first_name": "John",
       "last_name": "Jackson",
