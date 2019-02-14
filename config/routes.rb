@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       end
       resources :sessions do
       end
+      resources :locations do
+      end 
     end
   end
 end
