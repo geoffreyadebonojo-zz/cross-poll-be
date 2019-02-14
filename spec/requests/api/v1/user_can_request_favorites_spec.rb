@@ -22,6 +22,13 @@ RSpec.describe "Favorites Endpoint" do
     expect(response.status).to eq(200)
     body = JSON.parse(response.body)["data"]
     expect(body.count).to eq(2)
+  end
+
+  xit "POST /favorites" do
+
+  end
+
+  xit "DELETE /favorites" do
 
   end
 end
