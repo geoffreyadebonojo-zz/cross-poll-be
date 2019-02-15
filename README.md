@@ -57,6 +57,15 @@ Response for an Errored User Log In:
 
 <ln>
   
+  <h2>get /api/v1/locations</h2>
+  
+  To get a users zip code, make a get request to /api/v1/locations. 
+  The response will return just the zip code where the user is located. It will look as follows: 
+  
+  ![alt text](readme_images/zip_code.png)
+
+<ln>
+  
   <h2>get /api/v1/favorites</h2>
  
  If a user does not have any favorites saved, and the get request is called, the response will look as follows: 
