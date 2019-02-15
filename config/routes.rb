@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       resources :locations do
       end
       resources :favorites do
-      end 
+      end
+      delete '/favorites', to: 'favorites#destroy'
     end
   end
 end
