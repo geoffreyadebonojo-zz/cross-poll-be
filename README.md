@@ -29,6 +29,10 @@ Response for an Errored User Registration:
 
 ![alt text](readme_images/post_users_error_response.png)
 
+Response for an invalid email address:
+
+![alt text](readme_images/invalid_email_response.png)
+
 
 <ln>
   
@@ -50,7 +54,46 @@ Response for a Successfull User Log In (users should extract and save the api fo
 Response for an Errored User Log In: 
 
 ![alt text](readme_images/post_sessions_error_response.png)
+
+<ln>
+  
+  <h2>get /api/v1/favorites</h2>
  
+ If a user does not have any favorites saved, and the get request is called, the response will look as follows: 
+ 
+ ![alt text](readme_images/get_favorites_none_saved.png)
+
+ If there are saved favorites for the user, the response will look as follows: 
+ 
+ ![alt text](readme_images/get_favorites_response.png)
+ 
+ 
+ <ln>
+  
+  <h2>post /api/v1/favorites</h2>
+  
+  To save a favorite to a user, send a post request to /api/v1/favorites and provide the following in the body of the request:
+  
+  ![alt text](readme_images/post_favorites_body.png)
+  
+  After sending this post request, a successfull post will return the following: 
+  
+  ![alt text](readme_images/post_favorites_response.png)
+  
+  If the request does not return properly, it is because the api_token is not associated with a user, and there will be an error message that will say this. 
+  
+  
+   <ln>
+  
+  <h2>delete /api/v1/favorites</h2>
+  
+  To delete a favorite that the user had saved, send a delete request to /api/v1/favorites and provide the following in the body of the request: 
+  
+  ![alt text](readme_images/delete_favorite_body.png)
+  
+  Right now, the response for a successful request gives back an updated list of that users favorites, but we can change this to a success message in the future. 
+  
+  ![alt text](readme_images/delete_favorite_response.png)
 
 
 <h1>Set Up</h1>
