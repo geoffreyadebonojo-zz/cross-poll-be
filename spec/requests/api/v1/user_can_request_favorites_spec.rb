@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Favorites Endpoint" do
-  xit "GET /favorites" do
+  it "GET /favorites" do
     user_data = {
       "first_name": "The Greatest",
       "last_name": "Guy",
@@ -11,11 +11,11 @@ RSpec.describe "Favorites Endpoint" do
     }
 
     user = User.create!(user_data)
-    user.favorites.create!(id: 1)
-    user.favorites.create!(id: 2)
+    user.favorites.create!(favorite_id: 1)
+    user.favorites.create!(favorite_id: 2)
 
     user_api_key = {
-      "api_key": user.api_key
+      "api_token": user.api_token
     }
 
     get "/api/v1/favorites", params: user_api_key
@@ -24,8 +24,65 @@ RSpec.describe "Favorites Endpoint" do
     expect(body.count).to eq(2)
   end
 
-  xit "POST /favorites" do
+  it "throws an error if incorrect api token is given" do
+    user_data = {
+      "first_name": "The Greatest",
+      "last_name": "Guy",
+      "email": "ggg@gmail.com",
+      "password": "abc123doremi",
+      "password_confirmation": "abc123doremi"
+    }
 
+    user = User.create!(user_data)
+    user.favorites.create!(favorite_id: 1)
+    user.favorites.create!(favorite_id: 2)
+
+    user_api_key = {
+      "api_token": "notAvalidAPItoken"
+    }
+
+    get "/api/v1/favorites", params: user_api_key
+    expect(response.status).to eq(404)
+  end
+
+  it "POST /favorites" do
+    user_data = {
+      "first_name": "The Greatest",
+      "last_name": "Guy",
+      "email": "ggg@gmail.com",
+      "password": "abc123doremi",
+      "password_confirmation": "abc123doremi"
+    }
+
+    user = User.create!(user_data)
+
+    data = {
+      "api_token": user.api_token,
+      "favorite_id": 1
+    }
+
+    post "/api/v1/favorites", params: data
+    expect(response.status).to eq(200)
+    expect(JSON.parse(response.body)["message"]).to eq("Successfully added favorite with id 1")
+  end
+
+  it "throws an error if no api token is provided" do
+    user_data = {
+      "first_name": "The Greatest",
+      "last_name": "Guy",
+      "email": "ggg@gmail.com",
+      "password": "abc123doremi",
+      "password_confirmation": "abc123doremi"
+    }
+
+    user = User.create!(user_data)
+
+    data = {
+      "favorite_id": 1
+    }
+
+    post "/api/v1/favorites", params: data
+    expect(response.status).to eq(404)
   end
 
   xit "DELETE /favorites" do
