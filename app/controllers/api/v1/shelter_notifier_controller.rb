@@ -1,4 +1,4 @@
-class ShelterNotifierController < ApplicationController
+class Api::V1::ShelterNotifierController < ApplicationController
 
   def create
     @user = User.find_by(api_token: params[:api_token])
