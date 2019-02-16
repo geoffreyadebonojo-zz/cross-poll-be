@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       delete '/favorites', to: 'favorites#destroy'
     end
   end
+
+  post '/shelter_notifier', to: 'shelter_notifier#create'
 end
