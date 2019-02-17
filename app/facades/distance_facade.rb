@@ -8,7 +8,7 @@ class DistanceFacade
 
   def get_distance
     user_lat_long
-    user_ll = Geokit::LatLng.new(40.260060,-75.231080)
+    user_ll = Geokit::LatLng.new(@lat,@long)
     shelter_ll = Geokit::LatLng.new(@shelter_lat,@shelter_long)
     mileage = user_ll.distance_from(shelter_ll,:units => :miles).round
     return mileage
