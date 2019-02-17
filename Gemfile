@@ -17,7 +17,8 @@ gem 'geocoder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'faraday'
 gem 'kickbox'
-
+gem 'geokit'
+gem 'geokit-rails'
 
 group :development, :test do
   gem 'rb-readline'
