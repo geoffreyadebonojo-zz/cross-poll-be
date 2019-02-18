@@ -60,9 +60,11 @@ Response for an Errored User Log In:
   <h2>get /api/v1/locations</h2>
   
   To get a users zip code, make a get request to /api/v1/locations. 
-  The response will return just the zip code where the user is located. It will look as follows: 
+  The response will return just the zip code where the user is located, as well as the users latitude and longitude. It will look as follows: 
   
   ![alt text](readme_images/zip_code.png)
+  
+  Lat and long should be saved in local storage for future requests. 
 
 <ln>
   
@@ -122,7 +124,36 @@ Or send the request with api_token as a query param such as
   
   ![alt text](readme_images/email_inbox.png)
   
-
+  
+  
+     <ln>
+  
+  <h2>post /api/v1/texts</h2>
+  
+  This endpoint allows a user to send a text message to a friend regarding an animal they found. We plan on making it so that it also sends a picture, but for right now, this request will work with the following body (recipient_phone would need to be inputed by the user... they should enter their friends phone number where they want the message sent): 
+  
+  ![alt text](readme_images/text_request.png)
+  
+  Right now, we are using a twilio trial, so only certain numbers (Meg's and Geoff's) are verified. We can look into buying a number from twilio (2 bucks a month) to avoid this limitation. 
+  
+  Again, we hope to get the picture to show in the text message, but right now, the text message will appear like this to the friend: 
+  
+   ![alt text](readme_images/text_response.png) 
+   
+ <ln>
+  
+  <h2>get /api/v1/distances</h2>
+    
+  This endpoint will allow our front end to populate the distance a user is from the shelter using the stored lat/long from the user as well as the shelters lat and long. 
+  
+  The request should look like this: 
+  
+   ![alt text](readme_images/distance_request.png) 
+   
+  And the response will simply be the mileage: 
+  
+   ![alt text](readme_images/distance_response.png) 
+  
 
 <h1>Set Up</h1>
 
