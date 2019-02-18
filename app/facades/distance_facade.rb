@@ -1,7 +1,7 @@
 class DistanceFacade
 
   def initialize(user_lat, user_long, shelter_lat, shelter_long)
-    @use_lat = user_lat
+    @user_lat = user_lat
     @user_long = user_long
     @shelter_lat = shelter_lat
     @shelter_long = shelter_long
