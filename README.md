@@ -67,6 +67,13 @@ Response for an Errored User Log In:
 <ln>
   
   <h2>get /api/v1/favorites</h2>
+ To get all of the favorites that a user has saved, make a get request to api/v1/favorites and either put the api_token in the body like this: 
+ 
+ ![alt text](readme_images/get_favorites_body.png)
+ 
+Or send the request with api_token as a query param such as 
+<h2> api/v1/favorites?api_token=${whateverTheApiTokenIs} </h2>
+(Using params will work better than putting it through the body on this get request). 
  
  If a user does not have any favorites saved, and the get request is called, the response will look as follows: 
  
