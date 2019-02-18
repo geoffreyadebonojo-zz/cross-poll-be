@@ -110,6 +110,18 @@ Or send the request with api_token as a query param such as
   Right now, the response for a successful request gives back an updated list of that users favorites, but we can change this to a success message in the future. 
   
   ![alt text](readme_images/delete_favorite_response.png)
+  
+   <ln>
+  
+  <h2>post /api/v1/shelter_notifier</h2>
+  To send an email to a shelter, send a post request to api/v1/shelter_notifier with the following in the body: 
+  
+  ![alt text](readme_images/email_body.png)
+  
+  This request will send an email to the shelter's email address in the following format: 
+  
+  ![alt text](readme_images/email_inbox.png)
+  
 
 
 <h1>Set Up</h1>
