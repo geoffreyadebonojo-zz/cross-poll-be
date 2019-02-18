@@ -4,8 +4,14 @@ class Api::V1::FavoritesController < ApplicationController
     user = User.find_by(api_token: params[:api_token])
     if user != nil
       new_fav = Favorite.find_or_create_by(favorite_id: params[:favorite_id])
-      UserFavorite.create(user_id: user.id, favorite_id: new_fav.id)
-      render :json => {:message => "Successfully added favorite with id #{params[:favorite_id]}"}.to_json, :status => 200
+      if user.favorites.find_by(favorite_id: params[:favorite_id]) != nil 
+        binding.pry
+        render :json => {:error => "You've already saved this pet to your favorites."}
+      else
+        binding.pry
+        UserFavorite.create(user_id: user.id, favorite_id: new_fav.id)
+        render :json => {:message => "Successfully added favorite with id #{params[:favorite_id]}"}.to_json, :status => 200
+      end
     else
       render :json =>{:error => "Cannot find user with this api token"}.to_json, :status => 404
     end
