@@ -19,6 +19,7 @@ gem 'faraday'
 gem 'kickbox'
 gem 'geokit'
 gem 'geokit-rails'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'rb-readline'
