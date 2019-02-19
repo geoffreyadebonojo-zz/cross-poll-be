@@ -48,4 +48,5 @@ RSpec.describe "Text endpoint" do
     expect(response.status).to eq(500)
     expect(JSON.parse(response.body)["error"]).to eq("This number is not currently verified with our Twilio Trial Account")
   end
+  
 end
