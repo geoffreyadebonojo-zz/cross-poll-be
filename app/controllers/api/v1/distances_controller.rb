@@ -6,6 +6,7 @@ class Api::V1::DistancesController < ApplicationController
       render :json => {:distance => mileage}.to_json, :status => 200
     else
       render :json => {:error => "Mileage could not be calculated"}.to_json, :status => 400
+    end
   end
 
 end
