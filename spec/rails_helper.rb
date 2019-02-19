@@ -5,6 +5,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'simplecov'
 require 'shoulda-matchers'
+require 'rb-readline'
+require 'pry'
 
 SimpleCov.start "rails"
 

@@ -11,6 +11,8 @@ gem 'figaro'
 gem 'httparty'
 gem 'fast_jsonapi'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'nokogiri'
+gem 'mechanize'
 
 gem 'geocoder'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
