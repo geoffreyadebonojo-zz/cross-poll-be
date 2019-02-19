@@ -9,7 +9,7 @@ class Api::V1::ShelterNotifierController < ApplicationController
     # @phone_number = param[:phone_number] if params[:phone_number]
     response = ShelterNotifierMailer.notify_shelter(@user, @shelter_email, @pet_name, @message).deliver_now
     if verify_email.body["result"] == "deliverable" && response.class == Mail::Message
-      render :json => {:success => "Email Sent!"}.to_json, :status => 200
+      render :json => {:success => "Email Sent!"}.to_json, :status => 204
     else
       render :json => {:error => "This email cannot be sent at this time. The Shelters email address may no longer be active."}.to_json, :status => 400
     end
