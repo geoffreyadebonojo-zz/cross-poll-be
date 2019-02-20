@@ -20,10 +20,7 @@ class TwilioFacade
   end
 
   def message_friend
-    "Your friend, #{@user_first_name} #{@user_last_name}
-    thinks that you and #{@pet_name} would be a great match!
-    #{@pet_name} is currently located at #{@shelter_name}.
-    " + @shelter_url
+    "Your friend, #{@user_first_name} #{@user_last_name} thinks that you and #{@pet_name} would be a great match! #{@pet_name} is currently located at #{@shelter_name}." + @shelter_url
   end
 
 end
