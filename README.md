@@ -130,13 +130,13 @@ Or send the request with api_token as a query param such as
   
   <h2>post /api/v1/texts</h2>
   
-  This endpoint allows a user to send a text message to a friend regarding an animal they found. We plan on making it so that it also sends a picture, but for right now, this request will work with the following body (recipient_phone would need to be inputed by the user... they should enter their friends phone number where they want the message sent): 
+  This endpoint allows a user to send a text message to a friend regarding an animal they found. The response should look as follows, where the pet_id is the id for the pet from petfinder, and the recipient_phone, is the number of a friend that the user wishes to send the animal to. Right now, the phone number should be inputed without any dashes or parantheses... just the numbers. 
   
   ![alt text](readme_images/text_request.png)
   
-  Right now, we are using a twilio trial, so only certain numbers (Meg's and Geoff's) are verified. We can look into buying a number from twilio (2 bucks a month) to avoid this limitation. 
+  Right now, we are using a twilio trial, so only certain numbers (Meg's, Geoff's, and Cole's) are verified. We can look into buying a number from twilio (2 bucks a month) to avoid this limitation. 
   
-  Again, we hope to get the picture to show in the text message, but right now, the text message will appear like this to the friend: 
+The text will appear as follows, with a link to the dog's profile included at the bottom of the message: 
   
    ![alt text](readme_images/text_response.png) 
    
@@ -165,9 +165,23 @@ Clone this repository and perform the following instructions in your terminal:
 <h2>Versions</h2>
 Adoptr API was developed using Rails 5.2 and Ruby 2.4
 
+<h2>Keys/Tokens Needed </h2>
+Kickbox API: https://kickbox.com/
+IPstack API: https://ipstack.com/documentation
+Sendgrid: https://sendgrid.com/
+Twilio: https://www.twilio.com/
+
+Gem Install Figaro in your terminal and include the following documentation in your application.yml file: 
+
+IPSTACK_API_KEY: "key_goes_here"
+KICKBOX_API: "key_goes_here"
+TWILIO_ACCOUNT_SID: "sid_goes_here"
+TWILIO_AUTH_TOKEN: "token_goes_here"
+TWILIO_PHONE_NUMBER: 'phone_num_goes_here' <--- must be in single quotes
+
 <h2>Install</h2>
 1. bundle install
-2. rake db:{drop,migrate,seed} 
+2. rake db:{drop,migrate} 
 3. rails s (opens server)
 4. visit http://localhost:3000 to access api endpoints locally
 
