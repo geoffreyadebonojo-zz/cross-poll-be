@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "Text endpoint" do
   it "POST /text" do
     user_data = {
-      "first_name": "The Greatest",
-      "last_name": "Guy",
+      "first_name": "John",
+      "last_name": "Smith",
       "email": "ggg@gmail.com",
       "password": "abc123doremi",
       "password_confirmation": "abc123doremi"
@@ -38,7 +38,7 @@ RSpec.describe "Text endpoint" do
 
     data = {
       "api_token": "invalidAPIToken",
-      "recipient_phone": "5038397336",
+      "recipient_phone": "7173951239",
       "pet_id": "43989015",
       "pet_name": "luigi",
       "shelter_name": "Animal House"
