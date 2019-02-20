@@ -20,7 +20,7 @@ RSpec.describe "Distance endpoint" do
     }
 
     get "/api/v1/distances", params: data
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(200)
   end
 
 end
