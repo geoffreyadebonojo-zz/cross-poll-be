@@ -6,7 +6,7 @@ class Api::V1::ShelterNotifierController < ApplicationController
     @pet_name = params[:pet_name]
     @shelter_email = params[:shelter_email]
     @message = params[:message]
-    # @phone_number = param[:phone_number] if params[:phone_number]
+
     response = ShelterNotifierMailer.notify_shelter(@user, @shelter_email, @pet_name, @message).deliver_now
     if verify_email.body["result"] == "deliverable" && response.class == Mail::Message
       render :json => {:success => "Email Sent!"}.to_json, :status => 204

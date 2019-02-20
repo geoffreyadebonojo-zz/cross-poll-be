@@ -1,12 +1,10 @@
 class TwilioFacade
   def initialize(user, recipient_phone, pet_id, pet_name, shelter_name)
     @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
-    # @user_first_name = user.first_name
-    # @user_last_name = user.last_name
-    @user_first_name = "Geoff"
-    @user_last_name = "Adams"
+    @user_first_name = user.first_name
+    @user_last_name = user.last_name
     @recipient_phone = recipient_phone
-    @pet_name = pet_name
+    @pet_name = pet_name.downcase
     @pet_id = pet_id
     @shelter_name = shelter_name
     @shelter_url = GoogleService.new("get petfinder #{@pet_name}-#{@pet_id}").get_link
@@ -20,7 +18,7 @@ class TwilioFacade
   end
 
   def message_friend
-    "Your friend, #{@user_first_name} #{@user_last_name} thinks that you and #{@pet_name} would be a great match! #{@pet_name} is currently located at #{@shelter_name}." + @shelter_url
+    "Your friend, #{@user_first_name} #{@user_last_name} thinks that you and #{@pet_name.capitalize} would be a great match! #{@pet_name.capitalize} is currently located at #{@shelter_name}." + @shelter_url
   end
 
 end
